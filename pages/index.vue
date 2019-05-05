@@ -17,6 +17,12 @@
     <div class="popUp" @click="zrobCos()" v-show="flaga" name="fade ">
       <div class="popUp-body">
         <h2>POP UP</h2>
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Text input">
+          </div>
+        </div>
       </div>
     </div>
   </div>

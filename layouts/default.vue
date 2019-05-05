@@ -21,8 +21,8 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item">Home</a>
-
+          <nuxt-link class="navbar-item" to="/">Home</nuxt-link>
+          <nuxt-link class="navbar-item" to="/contact">Kontakt</nuxt-link>
           <a class="navbar-item">Documentation</a>
 
           <div class="navbar-item has-dropdown is-hoverable">

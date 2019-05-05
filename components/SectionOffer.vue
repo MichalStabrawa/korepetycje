@@ -56,6 +56,7 @@ export default {};
   }
   h3 {
     text-align: left;
+    margin-top: 20px;
   }
   .btn-wrapper {
     padding-top: 50px;
