@@ -16,6 +16,7 @@
 
     <div class="popUp" @click="zrobCos()" v-show="flaga" name="fade ">
       <div class="popUp-body">
+        <a class="delete is-large"></a>
         <h2>POP UP</h2>
         <div class="field">
           <label class="label">Name</label>
@@ -85,10 +86,17 @@ header {
   background: rgba(30, 30, 20, 0.8);
 }
 .popUp-body {
+  position: relative;
   width: 500px;
   padding: 20px;
   background: #fff;
   margin: 0 auto;
+
+  .delete {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
 }
 .fade-enter-active,
 .fade-leave-active {
