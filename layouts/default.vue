@@ -12,6 +12,7 @@
           aria-label="menu"
           aria-expanded="false"
           data-target="navbarBasicExample"
+          @click="show()"
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -19,7 +20,7 @@
         </a>
       </div>
 
-      <div id="navbarBasicExample" class="navbar-menu">
+      <div id="navbarBasicExample" class="navbar-menu" :class="{active: flag}">
         <div class="navbar-start">
           <nuxt-link class="navbar-item" to="/">Home</nuxt-link>
           <nuxt-link class="navbar-item" to="/contact">Kontakt</nuxt-link>
@@ -53,6 +54,23 @@
     <nuxt/>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      flag: false
+    };
+  },
+  methods: {
+    show() {
+      this.flag = !this.flag;
+      console.log(this.flag);
+    }
+  }
+};
+</script>
+
 
 <style>
 html {
@@ -101,5 +119,8 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+.active {
+  display: block;
 }
 </style>
