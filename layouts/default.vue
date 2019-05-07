@@ -3,7 +3,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="https://bulma.io">
-          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+          <img src="../assets/img/logo.png">
         </a>
 
         <a
@@ -23,8 +23,9 @@
       <div id="navbarBasicExample" class="navbar-menu" :class="{active: flag}">
         <div class="navbar-start">
           <nuxt-link class="navbar-item" to="/">Home</nuxt-link>
+          <nuxt-link class="navbar-item" to="/">Matematyka</nuxt-link>
+          <nuxt-link class="navbar-item" to="/">Chemia</nuxt-link>
           <nuxt-link class="navbar-item" to="/contact">Kontakt</nuxt-link>
-          <a class="navbar-item">Documentation</a>
 
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">More</a>

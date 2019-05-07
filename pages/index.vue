@@ -12,6 +12,7 @@
     <SectionOffer/>
     <SectionPhone/>
     <SectionAbout/>
+    <SectionFuture/>
     <FooterComponent/>
 
     <div class="popUp" @click="zrobCos()" v-show="flaga" name="fade ">
@@ -37,6 +38,7 @@ import SectionOffer from "./../components/SectionOffer";
 import SectionPhone from "./../components/SectionPhone";
 import SectionAbout from "./../components/SectionAbout";
 import FooterComponent from "./../components/footer/FooterComponents";
+import SectionFuture from "./../components/SectionFuture";
 export default {
   components: {
     Logo,
@@ -45,7 +47,8 @@ export default {
     SectionOffer,
     SectionPhone,
     SectionAbout,
-    FooterComponent
+    FooterComponent,
+    SectionFuture
   },
   data() {
     return {
