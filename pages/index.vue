@@ -4,7 +4,9 @@
       <div class="container">
         <h1 class="title is-1">KOREPETYCJE</h1>
         <h2 class="title is-2">Matematyka Chemia</h2>
-        <p>Profesjonalne korepetycje Bochnia Nowy Wiśnicz prowadzone przez doświadczonego nauczyciela</p>
+        <p
+          class="header-content"
+        >Profesjonalne korepetycje Bochnia Nowy Wiśnicz prowadzone przez doświadczonego nauczyciela</p>
         <ButtonComponent @click="zrobCos()"/>
       </div>
     </header>
@@ -27,10 +29,13 @@
         </div>
       </div>
     </div>
+    {{posts}}
+    {{newApi}}
   </div>
 </template>
 
 <script>
+import axios from "axios";
 import Logo from "~/components/Logo.vue";
 import ButtonComponent from "./../components/ButtonComponent";
 import SectionSkills from "./../components/SectionSkills";
@@ -39,6 +44,7 @@ import SectionPhone from "./../components/SectionPhone";
 import SectionAbout from "./../components/SectionAbout";
 import FooterComponent from "./../components/footer/FooterComponents";
 import SectionFuture from "./../components/SectionFuture";
+
 export default {
   components: {
     Logo,
@@ -50,11 +56,16 @@ export default {
     FooterComponent,
     SectionFuture
   },
+
   data() {
     return {
-      flaga: false
+      flaga: false,
+      info: null,
+      posts: [],
+      errors: []
     };
   },
+
   methods: {
     zrobCos() {
       this.flaga = !this.flaga;
@@ -74,8 +85,9 @@ header {
   align-items: center;
   padding: 20px;
 
-  p {
+  .header-content {
     max-width: 50%;
+    font-size: 24px;
   }
 }
 .popUp {

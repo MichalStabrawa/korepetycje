@@ -43,9 +43,10 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button is-primary">
+              <nuxt-link class="button is-primary" to="/register">
                 <strong>Sign up</strong>
-              </a>
+              </nuxt-link>
+
               <a class="button is-light">Log in</a>
             </div>
           </div>
@@ -123,5 +124,9 @@ html {
 }
 .active {
   display: block;
+}
+
+.button.is-primary {
+  background: #276cda;
 }
 </style>
