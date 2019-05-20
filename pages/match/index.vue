@@ -32,28 +32,31 @@
         </ul>
       </div>
     </section>
-    <section class="price">
-      <div class="container">
-        <h2>Cennik</h2>
 
-        <label>Wybierz liczbę uczniów</label>
-        <div class="select">
-          <select id="person" @change="showValue">
-            <option
-              v-for="(item,index) in doctorsShow"
-              :key="index"
-              :value="item.person"
-            >{{item.person}}</option>
-          </select>
+    <section class="price">
+      <div class="container container-price">
+        <hr>
+        <h2>Cennik</h2>
+        <div class="price-wrapper">
+          <label>Wybierz liczbę uczniów</label>
+          <div class="select">
+            <select id="person" @change="showValue" v-model="selected">
+              <option
+                v-for="(item,index) in doctorsShow"
+                :key="index"
+                :value="item.person"
+              >{{item.person}}</option>
+            </select>
+          </div>
+          <label class="label-second">Wybierz rodzaj szkoły</label>
+          <div class="select">
+            <select>
+              <option>podstawowa</option>
+              <option>średnia</option>
+            </select>
+          </div>
+          <button @click="showPrice" class="button is-info">Sprawdz cenę</button>
         </div>
-        <label>Wybierz rodzaj szkoły</label>
-        <div class="select">
-          <select>
-            <option>podstawowa</option>
-            <option>średnia</option>
-          </select>
-        </div>
-        <button @click="showPrice" class="button is-info">Sprawdz cenę</button>
       </div>
     </section>
     <div class="container alert" v-show="alert">
@@ -69,10 +72,9 @@
     </div>
 
     <section class="price-lesson">
-      <div class="container" v-show="flag">
+      <div class="container container-show" v-show="flag">
         <h3 class="price-title">Cena korepetycji:</h3>
         <p class="price-content">{{showPrice2}}</p>
-       
       </div>
     </section>
     <FooterComponents/>
@@ -92,7 +94,8 @@ export default {
       typeSchool: "",
       price: null,
       test: "",
-      alert: false
+      alert: false,
+      selected: ""
     };
   },
 
@@ -127,6 +130,7 @@ export default {
         this.flag = true;
       } else {
         this.alert = true;
+        this.flag = false;
       }
     },
     hideAlert() {
@@ -139,7 +143,7 @@ export default {
 <style lang="scss" scoped>
 .container {
   padding-top: 50px;
-  padding-bottom: 50px;
+
   li {
     font-size: 32px;
 
@@ -147,6 +151,10 @@ export default {
       color: greenyellow;
     }
   }
+}
+.container-price,
+.container-show {
+  padding-bottom: 50px;
 }
 .price-lesson {
   background-color: #adff2f;
@@ -156,6 +164,24 @@ export default {
   }
   p {
     font-size: 24px;
+  }
+}
+.hero {
+  background: url("../../assets/img/matematyka-tlo.png");
+  background-size: cover;
+}
+.price-wrapper {
+  padding-top: 26px;
+  display: flex;
+  align-items: center;
+  label {
+    margin-right: 20px;
+  }
+  .label-second {
+    margin-left: 20px;
+  }
+  .button {
+    margin-left: 20px;
   }
 }
 </style>
