@@ -29,8 +29,6 @@
         </div>
       </div>
     </div>
-    {{posts}}
-    {{newApi}}
   </div>
 </template>
 

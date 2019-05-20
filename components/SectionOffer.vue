@@ -6,6 +6,13 @@
         <div class="column">
           <figure>
             <img src="../assets/img/chemia-korepetycje.png" alt>
+            <div class="mask" @mouseenter="show">
+              <nuxt-link to="/chemistry">
+                <span class="icon">
+                  <i class="fas fa-3x fa-plus"></i>
+                </span>
+              </nuxt-link>
+            </div>
           </figure>
           <h3 class="title is-3">CHEMIA</h3>
           <p
@@ -18,6 +25,13 @@
         <div class="column">
           <figure>
             <img src="../assets/img/matematyka.png" alt>
+            <div class="mask">
+              <nuxt-link to="/match">
+                <span class="icon">
+                  <i class="fas fa-3x fa-plus"></i>
+                </span>
+              </nuxt-link>
+            </div>
           </figure>
           <h3 class="title is-3">MATEMATYKA</h3>
           <p
@@ -29,11 +43,18 @@
         </div>
       </div>
     </div>
+ 
   </section>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    show() {
+      console.log("Mouseleave");
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -53,6 +74,36 @@ export default {};
 .column {
   figure {
     width: 100%;
+    position: relative;
+
+    .mask {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      opacity: 0;
+      background: rgba(255, 255, 255, 0.5);
+      transition: 0.5s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .icon {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f4c352;
+        border-radius: 50%;
+        color: #fff;
+      }
+    }
+
+    .mask:hover {
+      opacity: 1;
+      transition: 0.5s;
+    }
 
     img {
       width: 100%;

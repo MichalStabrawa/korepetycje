@@ -23,7 +23,7 @@
       <div id="navbarBasicExample" class="navbar-menu" :class="{active: flag}">
         <div class="navbar-start">
           <nuxt-link class="navbar-item" to="/">Home</nuxt-link>
-          <nuxt-link class="navbar-item" to="/">Matematyka</nuxt-link>
+          <nuxt-link class="navbar-item" to="/match">Matematyka</nuxt-link>
           <nuxt-link class="navbar-item" to="/">Chemia</nuxt-link>
           <nuxt-link class="navbar-item" to="/contact">Kontakt</nuxt-link>
 
