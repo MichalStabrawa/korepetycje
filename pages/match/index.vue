@@ -51,6 +51,7 @@
           <label class="label-second">Wybierz rodzaj szkoły</label>
           <div class="select">
             <select>
+              <option disabled value>Please select one</option>
               <option>podstawowa</option>
               <option>średnia</option>
             </select>
@@ -169,6 +170,7 @@ export default {
 .hero {
   background: url("../../assets/img/matematyka-tlo.png");
   background-size: cover;
+  height: 260px;
 }
 .price-wrapper {
   padding-top: 26px;

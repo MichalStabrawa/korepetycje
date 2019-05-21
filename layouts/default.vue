@@ -24,20 +24,8 @@
         <div class="navbar-start">
           <nuxt-link class="navbar-item" to="/">Home</nuxt-link>
           <nuxt-link class="navbar-item" to="/match">Matematyka</nuxt-link>
-          <nuxt-link class="navbar-item" to="/">Chemia</nuxt-link>
+          <nuxt-link class="navbar-item" to="/chemistry">Chemia</nuxt-link>
           <nuxt-link class="navbar-item" to="/contact">Kontakt</nuxt-link>
-
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">More</a>
-
-            <div class="navbar-dropdown">
-              <a class="navbar-item">About</a>
-              <a class="navbar-item">Jobs</a>
-              <a class="navbar-item">Contact</a>
-              <hr class="navbar-divider">
-              <a class="navbar-item">Report an issue</a>
-            </div>
-          </div>
         </div>
 
         <div class="navbar-end">
