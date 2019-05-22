@@ -4,7 +4,9 @@
       <div class="container">
         <h1 class="title is-1">KOREPETYCJE</h1>
         <h2 class="title is-2">Matematyka Chemia</h2>
-        <p>Profesjonalne korepetycje Bochnia Nowy Wiśnicz prowadzone przez doświadczonego nauczyciela</p>
+        <p
+          class="header-content"
+        >Profesjonalne korepetycje Bochnia Nowy Wiśnicz prowadzone przez doświadczonego nauczyciela</p>
         <ButtonComponent @click="zrobCos()"/>
       </div>
     </header>
@@ -12,10 +14,12 @@
     <SectionOffer/>
     <SectionPhone/>
     <SectionAbout/>
+    <SectionFuture/>
     <FooterComponent/>
 
     <div class="popUp" @click="zrobCos()" v-show="flaga" name="fade ">
       <div class="popUp-body">
+        <a class="delete is-large"></a>
         <h2>POP UP</h2>
         <div class="field">
           <label class="label">Name</label>
@@ -29,6 +33,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import Logo from "~/components/Logo.vue";
 import ButtonComponent from "./../components/ButtonComponent";
 import SectionSkills from "./../components/SectionSkills";
@@ -36,6 +41,8 @@ import SectionOffer from "./../components/SectionOffer";
 import SectionPhone from "./../components/SectionPhone";
 import SectionAbout from "./../components/SectionAbout";
 import FooterComponent from "./../components/footer/FooterComponents";
+import SectionFuture from "./../components/SectionFuture";
+
 export default {
   components: {
     Logo,
@@ -44,13 +51,19 @@ export default {
     SectionOffer,
     SectionPhone,
     SectionAbout,
-    FooterComponent
+    FooterComponent,
+    SectionFuture
   },
+
   data() {
     return {
-      flaga: false
+      flaga: false,
+      info: null,
+      posts: [],
+      errors: []
     };
   },
+
   methods: {
     zrobCos() {
       this.flaga = !this.flaga;
@@ -70,8 +83,9 @@ header {
   align-items: center;
   padding: 20px;
 
-  p {
+  .header-content {
     max-width: 50%;
+    font-size: 24px;
   }
 }
 .popUp {
@@ -85,10 +99,17 @@ header {
   background: rgba(30, 30, 20, 0.8);
 }
 .popUp-body {
+  position: relative;
   width: 500px;
   padding: 20px;
   background: #fff;
   margin: 0 auto;
+
+  .delete {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
 }
 .fade-enter-active,
 .fade-leave-active {

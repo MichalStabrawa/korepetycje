@@ -3,7 +3,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="https://bulma.io">
-          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+          <img src="../assets/img/logo.png">
         </a>
 
         <a
@@ -12,6 +12,7 @@
           aria-label="menu"
           aria-expanded="false"
           data-target="navbarBasicExample"
+          @click="show()"
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -19,31 +20,21 @@
         </a>
       </div>
 
-      <div id="navbarBasicExample" class="navbar-menu">
+      <div id="navbarBasicExample" class="navbar-menu" :class="{active: flag}">
         <div class="navbar-start">
           <nuxt-link class="navbar-item" to="/">Home</nuxt-link>
+          <nuxt-link class="navbar-item" to="/match">Matematyka</nuxt-link>
+          <nuxt-link class="navbar-item" to="/chemistry">Chemia</nuxt-link>
           <nuxt-link class="navbar-item" to="/contact">Kontakt</nuxt-link>
-          <a class="navbar-item">Documentation</a>
-
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">More</a>
-
-            <div class="navbar-dropdown">
-              <a class="navbar-item">About</a>
-              <a class="navbar-item">Jobs</a>
-              <a class="navbar-item">Contact</a>
-              <hr class="navbar-divider">
-              <a class="navbar-item">Report an issue</a>
-            </div>
-          </div>
         </div>
 
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button is-primary">
+              <nuxt-link class="button is-primary" to="/register">
                 <strong>Sign up</strong>
-              </a>
+              </nuxt-link>
+
               <a class="button is-light">Log in</a>
             </div>
           </div>
@@ -53,6 +44,23 @@
     <nuxt/>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      flag: false
+    };
+  },
+  methods: {
+    show() {
+      this.flag = !this.flag;
+      console.log(this.flag);
+    }
+  }
+};
+</script>
+
 
 <style>
 html {
@@ -101,5 +109,12 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+.active {
+  display: block;
+}
+
+.button.is-primary {
+  background: #276cda;
 }
 </style>

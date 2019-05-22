@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="button is-link is-large" @click="$emit('click')">Click</button>
+    <button class="button is-link is-large" @click="$emit('click')">KONTAKT</button>
   </div>
 </template>
 
