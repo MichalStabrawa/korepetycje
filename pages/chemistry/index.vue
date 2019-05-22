@@ -52,12 +52,13 @@
           </div>
           <label class="label-second">Wybierz rodzaj szkoły</label>
           <div class="select">
-            <select v-model="schoolValue" id="id">
+            <select v-model="schoolValue" @change="handleChangeScholl" id="id">
               <option disabled value>szkoła</option>
               <option
                 v-for="(item,index) in showSchoolValue"
                 :key="index"
                 :value="item.value"
+                :data-value="item.type"
               >{{item.type}}</option>
             </select>
           </div>
@@ -80,7 +81,7 @@
 
     <section class="price-lesson">
       <div class="container container-show" v-show="flag">
-        <h3 class="price-title">Cena korepetycji:</h3>
+        <h3 class="price-title">Cena korepetycji szkoła {{myAttrScholl}}</h3>
         <p class="price-content">{{testSelect}}</p>
       </div>
     </section>
@@ -104,6 +105,7 @@ export default {
       lessonPrice: null,
       test: null,
       myAttr: null,
+      myAttrScholl: null,
       flag: false,
       alert: false
     };
@@ -121,7 +123,11 @@ export default {
   },
   methods: {
     showPrice() {
-      if (this.selected === "" || this.selected === "liczba uczniów") {
+      if (
+        this.selected === "" ||
+        this.selected === "liczba uczniów" ||
+        this.myAttrScholl === null
+      ) {
         this.alert = true;
         this.flag = false;
       } else {
@@ -141,6 +147,15 @@ export default {
         this.myAttr = parseInt(
           e.target.options[e.target.options.selectedIndex].dataset.value
         );
+      }
+    },
+    handleChangeScholl(e) {
+      if (e.target.options.selectedIndex > -1) {
+        console.log(
+          e.target.options[e.target.options.selectedIndex].dataset.value
+        );
+        this.myAttrScholl =
+          e.target.options[e.target.options.selectedIndex].dataset.value;
       }
     }
   }
