@@ -19,7 +19,9 @@
             class="offert-content"
           >Profesjonalne korepetycje do szkoły podstawowej oraz średniej. Przygotowanie na codzienne lekcje, do klasówek, sprawdzianów.</p>
           <div class="btn-wrapper">
-            <button class="button is-info is-large">Więcej</button>
+            <button class="button is-info is-large">
+              <nuxt-link to="/chemistry">Więcej</nuxt-link>
+            </button>
           </div>
         </div>
         <div class="column">
@@ -38,12 +40,13 @@
             class="offert-content"
           >Profesjonalne korepetycje do szkoły podstawowej i średniej. Przygotowanie do matur.</p>
           <div class="btn-wrapper">
-            <button class="button is-info is-large">Więcej</button>
+            <button class="button is-info is-large">
+              <nuxt-link to="/match">Więcej</nuxt-link>
+            </button>
           </div>
         </div>
       </div>
     </div>
- 
   </section>
 </template>
 
@@ -117,6 +120,10 @@ export default {
     padding-top: 50px;
     button {
       min-width: 150px;
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
     }
   }
 }

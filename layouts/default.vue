@@ -117,4 +117,10 @@ html {
 .button.is-primary {
   background: #276cda;
 }
+.navbar-item {
+  font-size: 18px;
+}
+.navbar-item:focus {
+  color: #eab547;
+}
 </style>

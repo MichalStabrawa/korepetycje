@@ -57,8 +57,8 @@ export default {
 
 <style lang="scss" scoped>
 .counter {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   background: #252123;
 }
 .timer {

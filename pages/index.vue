@@ -21,12 +21,9 @@
     <div class="popUp" @click="zrobCos()" v-show="flaga" name="fade ">
       <div class="popUp-body">
         <a class="delete is-large"></a>
-        <h2>POP UP</h2>
-        <div class="field">
-          <label class="label">Name</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="Text input">
-          </div>
+        <h2>Rezerwacja zajęć</h2>
+        <div class="content">
+          <h3>535007005</h3>
         </div>
       </div>
     </div>
@@ -89,6 +86,7 @@ header {
   .header-content {
     max-width: 50%;
     font-size: 24px;
+    font-weight: bold;
   }
 }
 .popUp {
@@ -120,5 +118,12 @@ header {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+.title {
+  text-shadow: 1px 1px 1px #eab547;
+}
+h1.title {
+  font-size: 52px;
+  font-weight: bold;
 }
 </style>
