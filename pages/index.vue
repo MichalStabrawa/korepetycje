@@ -10,14 +10,7 @@
         <ButtonComponent @click="zrobCos()"/>
       </div>
     </header>
-    <section class="counter">
-      <div class="container">
-        <div @click="startInterval" class="timer">
-          {{myText}}%
-          <span v-show="myText ===100">Zadowolonych klientów</span>
-        </div>
-      </div>
-    </section>
+    <SectionCounter/>
     <SectionSkills/>
     <SectionOffer/>
     <SectionPhone/>
@@ -50,6 +43,7 @@ import SectionPhone from "./../components/SectionPhone";
 import SectionAbout from "./../components/SectionAbout";
 import FooterComponent from "./../components/footer/FooterComponents";
 import SectionFuture from "./../components/SectionFuture";
+import SectionCounter from "@/components/SectionCounter";
 
 export default {
   components: {
@@ -60,7 +54,8 @@ export default {
     SectionPhone,
     SectionAbout,
     FooterComponent,
-    SectionFuture
+    SectionFuture,
+    SectionCounter
   },
 
   data() {
@@ -68,30 +63,14 @@ export default {
       flaga: false,
       info: null,
       posts: [],
-      errors: [],
-      counter: 0,
-      interval: null,
-      myText: 0
+      errors: []
     };
   },
 
   methods: {
     zrobCos() {
       this.flaga = !this.flaga;
-    },
-    startInterval() {
-      const t = setInterval(() => {
-        if (this.myText >= 100) {
-          clearInterval(t);
-        } else {
-          this.myText = this.myText + 1;
-        }
-      }, 100);
     }
-  },
-
-  created() {
-    this.startInterval();
   }
 };
 </script>
@@ -141,28 +120,5 @@ header {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
-}
-.counter {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background: #f4c352;
-}
-.timer {
-  width: 200px;
-  height: 120px;
-  border: 1px solid #a9c3d9;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #000;
-  font-size: 2.5rem;
-  flex-direction: column;
-  background: #a9c3d9;
-  color: #fff;
-
-  span {
-    font-size: 16px;
-  }
 }
 </style>
