@@ -51,14 +51,19 @@ export default {};
     padding: 20px;
     border-radius: 15px;
     text-align: center;
+    -webkit-box-shadow: 0px 8px 5px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 8px 5px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 8px 5px -6px rgba(0, 0, 0, 0.75);
 
     h2 {
       font-size: 20px;
-      color: #f0f0f0;
+      color: #56545f;
       font-weight: bold;
     }
     p {
       color: #fff;
+      margin-top: 25px;
+      font-size: 18px;
     }
 
     figure {
@@ -70,9 +75,12 @@ export default {};
       align-items: center;
       justify-content: center;
       margin: 0 auto;
+      -webkit-box-shadow: 0px 8px 5px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 8px 5px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 8px 5px -6px rgba(0, 0, 0, 0.75);
 
       i {
-        color: #a9c3d9;
+        color: #56545f;
       }
     }
   }

@@ -21,6 +21,9 @@ export default {};
 .button {
   min-width: 150px;
   margin-top: 50px;
+  -webkit-box-shadow: 0px 8px 5px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 8px 5px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 8px 5px -6px rgba(0, 0, 0, 0.75);
 }
 </style>
 

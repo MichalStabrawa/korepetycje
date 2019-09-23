@@ -15,7 +15,7 @@ export default {};
 
 <style lang="scss" scoped>
 .phone-contact {
-  background: #a9c3d9;
+  background: #56545f;
   padding-top: 50px;
   padding-bottom: 50px;
 
