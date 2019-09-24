@@ -59,12 +59,11 @@ export default {
 .counter {
   padding-top: 50px;
   padding-bottom: 50px;
-  background: #252123;
+  background: #bbbbbb;
 }
 .timer {
   width: 250px;
   height: 120px;
-  border: 1px solid #a9c3d9;
   text-align: center;
   display: flex;
   align-items: center;
@@ -72,9 +71,12 @@ export default {
   color: #000;
   font-size: 2.5rem;
   flex-direction: column;
-  background: #a9c3d9;
+  background: #56545f;
   color: #fff;
   border-radius: 15px;
+  -webkit-box-shadow: 0px 8px 5px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 8px 5px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 8px 5px -6px rgba(0, 0, 0, 0.75);
 
   span {
     font-size: 16px;

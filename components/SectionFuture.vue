@@ -14,7 +14,7 @@ export default {};
 .future {
   padding-top: 50px;
   padding-bottom: 50px;
-  background: #a9c3d9;
+  background: #56545f;
   display: flex;
   align-items: center;
   justify-content: center;
